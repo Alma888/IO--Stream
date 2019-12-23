@@ -1,0 +1,57 @@
+# IO--Stream
+
+# IO--Stream
+
+一、文件：（File）---->文件是操作系统组织数据的一种方式
+    1、常见的文件有：
+         硬盘上的文件（80%）
+         硬盘，网络，屏幕都有可能被组织成文件（操作系统实现相关）
+    2、java用来描述文件用的是：File类
+          File类的相关操作：（1）是不是目录
+                           （2）是否存在
+                           （3）创建...
+    3、通常一个文件有以下三个权限：
+        （1）是否可读（能否打开）
+        （2）是否可写（可保存）
+        （3）可否执行权限
+    4、总结File类的一些操作方法： File file=new File();
+        file.exists();
+        file.isDirectory();
+        file.getFreeSpace();
+        file.getUsableSpace();
+        file.getTotalSpace();
+        file.getAbsolutePath();
+        file.getParent();
+        file.canRead();
+        file.canWrite();
+        file.canExecute();
+        file.createNewFile();
+        file.delete();
+        file.deleteOnExit();
+        file.mkdir();
+        file.mkdirs();
+        file.listFiles();
+        file.isHidden();
+        file.length();
+        file.renameTo();
+        File.listRoots();//返回的是一个数组
+
+    5、绝对路径（absolute path）--->从根路径开始的一个文件路径
+        在Windows上     ===》   C:\Windows\...
+        在Linux上       ===》   /root/hello（以“/”开始的路径都是绝对路径）
+    6、相对路径（relative path）
+          相对当前路径的一个路径
+          是相对于项目嘛？
+       （1）是运行时期的一个路径——程序启动时的路径：
+                                工作路径（work directory ）
+       （2）..上一级路径
+            .当前路径
+
+        不是绝对路径，就是相对路径
+      work directory： C:\\Users
+      1\..\2\3\4\.\5\..\6\文件  ====》最终的绝对路径： C:\\Users\2\3\4\6\文件
+
+    7、相对路径是运行期间的定位
+       相对于进程的工作路径（work directory ）：启动时 的路径
+      在Java中一般无法修改工作路径， 如果通过其他语言，是可以修改工作路径的。
+
